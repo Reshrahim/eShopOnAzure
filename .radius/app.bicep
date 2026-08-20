@@ -692,26 +692,3 @@ resource webapp 'Radius.Compute/containers@2025-08-01-preview' = {
     }
   }
 }
-
-resource webappRoute 'Radius.Compute/routes@2025-08-01-preview' = {
-  name: 'webapp-route'
-  properties: {
-    environment: environment
-    application: eshopApp.id
-    codeReference: 'src/eShop.AppHost/Program.cs#L75'
-    rules: [
-      {
-        matches: [
-          {
-            httpPath: '/'
-          }
-        ]
-        destinationContainer: {
-          resourceId: webapp.id
-          containerName: 'webapp'
-          containerPort: 8080
-        }
-      }
-    ]
-  }
-}
