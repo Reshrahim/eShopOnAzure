@@ -105,7 +105,7 @@ resource catalogImage 'Radius.Compute/containerImages@2025-08-01-preview' = {
     application: eshopApp.id
     codeReference: 'src/Catalog.API/Dockerfile'
     build: {
-      source: 'git::https://github.com/Reshrahim/eShopOnAzure.git?ref=30054b4eb54ed9fb175b778ebc0faa2a1a1ef34a'
+      source: 'git::https://github.com/Reshrahim/eShopOnAzure.git?ref=68c107ccadc0936901fac24855a47fc2c3ebcd0c'
       dockerfile: 'src/Catalog.API/Dockerfile'
       platforms: [
         'linux/amd64'
@@ -124,7 +124,7 @@ resource basketImage 'Radius.Compute/containerImages@2025-08-01-preview' = {
     application: eshopApp.id
     codeReference: 'src/Basket.API/Dockerfile'
     build: {
-      source: 'git::https://github.com/Reshrahim/eShopOnAzure.git?ref=30054b4eb54ed9fb175b778ebc0faa2a1a1ef34a'
+      source: 'git::https://github.com/Reshrahim/eShopOnAzure.git?ref=68c107ccadc0936901fac24855a47fc2c3ebcd0c'
       dockerfile: 'src/Basket.API/Dockerfile'
       platforms: [
         'linux/amd64'
@@ -143,7 +143,7 @@ resource orderingImage 'Radius.Compute/containerImages@2025-08-01-preview' = {
     application: eshopApp.id
     codeReference: 'src/Ordering.API/Dockerfile'
     build: {
-      source: 'git::https://github.com/Reshrahim/eShopOnAzure.git?ref=30054b4eb54ed9fb175b778ebc0faa2a1a1ef34a'
+      source: 'git::https://github.com/Reshrahim/eShopOnAzure.git?ref=68c107ccadc0936901fac24855a47fc2c3ebcd0c'
       dockerfile: 'src/Ordering.API/Dockerfile'
       platforms: [
         'linux/amd64'
@@ -162,7 +162,7 @@ resource orderProcessorImage 'Radius.Compute/containerImages@2025-08-01-preview'
     application: eshopApp.id
     codeReference: 'src/OrderProcessor/Dockerfile'
     build: {
-      source: 'git::https://github.com/Reshrahim/eShopOnAzure.git?ref=30054b4eb54ed9fb175b778ebc0faa2a1a1ef34a'
+      source: 'git::https://github.com/Reshrahim/eShopOnAzure.git?ref=68c107ccadc0936901fac24855a47fc2c3ebcd0c'
       dockerfile: 'src/OrderProcessor/Dockerfile'
       platforms: [
         'linux/amd64'
@@ -181,7 +181,7 @@ resource paymentProcessorImage 'Radius.Compute/containerImages@2025-08-01-previe
     application: eshopApp.id
     codeReference: 'src/PaymentProcessor/Dockerfile'
     build: {
-      source: 'git::https://github.com/Reshrahim/eShopOnAzure.git?ref=30054b4eb54ed9fb175b778ebc0faa2a1a1ef34a'
+      source: 'git::https://github.com/Reshrahim/eShopOnAzure.git?ref=68c107ccadc0936901fac24855a47fc2c3ebcd0c'
       dockerfile: 'src/PaymentProcessor/Dockerfile'
       platforms: [
         'linux/amd64'
@@ -200,7 +200,7 @@ resource webhooksImage 'Radius.Compute/containerImages@2025-08-01-preview' = {
     application: eshopApp.id
     codeReference: 'src/Webhooks.API/Dockerfile'
     build: {
-      source: 'git::https://github.com/Reshrahim/eShopOnAzure.git?ref=30054b4eb54ed9fb175b778ebc0faa2a1a1ef34a'
+      source: 'git::https://github.com/Reshrahim/eShopOnAzure.git?ref=68c107ccadc0936901fac24855a47fc2c3ebcd0c'
       dockerfile: 'src/Webhooks.API/Dockerfile'
       platforms: [
         'linux/amd64'
@@ -219,7 +219,7 @@ resource mobileBffImage 'Radius.Compute/containerImages@2025-08-01-preview' = {
     application: eshopApp.id
     codeReference: 'src/Mobile.Bff.Shopping/Dockerfile'
     build: {
-      source: 'git::https://github.com/Reshrahim/eShopOnAzure.git?ref=30054b4eb54ed9fb175b778ebc0faa2a1a1ef34a'
+      source: 'git::https://github.com/Reshrahim/eShopOnAzure.git?ref=68c107ccadc0936901fac24855a47fc2c3ebcd0c'
       dockerfile: 'src/Mobile.Bff.Shopping/Dockerfile'
       platforms: [
         'linux/amd64'
@@ -238,7 +238,7 @@ resource webhooksClientImage 'Radius.Compute/containerImages@2025-08-01-preview'
     application: eshopApp.id
     codeReference: 'src/WebhookClient/Dockerfile'
     build: {
-      source: 'git::https://github.com/Reshrahim/eShopOnAzure.git?ref=30054b4eb54ed9fb175b778ebc0faa2a1a1ef34a'
+      source: 'git::https://github.com/Reshrahim/eShopOnAzure.git?ref=68c107ccadc0936901fac24855a47fc2c3ebcd0c'
       dockerfile: 'src/WebhookClient/Dockerfile'
       platforms: [
         'linux/amd64'
@@ -257,7 +257,7 @@ resource webappImage 'Radius.Compute/containerImages@2025-08-01-preview' = {
     application: eshopApp.id
     codeReference: 'src/WebApp/Dockerfile'
     build: {
-      source: 'git::https://github.com/Reshrahim/eShopOnAzure.git?ref=30054b4eb54ed9fb175b778ebc0faa2a1a1ef34a'
+      source: 'git::https://github.com/Reshrahim/eShopOnAzure.git?ref=68c107ccadc0936901fac24855a47fc2c3ebcd0c'
       dockerfile: 'src/WebApp/Dockerfile'
       platforms: [
         'linux/amd64'
