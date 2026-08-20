@@ -288,7 +288,7 @@ resource catalogApi 'Radius.Compute/containers@2025-08-01-preview' = {
             value: postgresPassword
           }
           ConnectionStrings__catalogdb: {
-            value: 'Host=${catalogPostgresDb.properties.host};Port=5432;Database=catalogdb;Username=eshopadmin;Password=$(POSTGRES_PASSWORD);SSL Mode=Require;Trust Server Certificate=true'
+            value: 'Host=${catalogPostgresDb.properties.host};Port=5432;Database=catalogdb;Username=eshopadmin;Password=${postgresPassword};SSL Mode=Require;Trust Server Certificate=true'
           }
           ConnectionStrings__eventBus: {
             valueFrom: {
@@ -388,7 +388,7 @@ resource orderingApi 'Radius.Compute/containers@2025-08-01-preview' = {
             value: postgresPassword
           }
           ConnectionStrings__orderingdb: {
-            value: 'Host=${orderingPostgresDb.properties.host};Port=5432;Database=orderingdb;Username=eshopadmin;Password=$(POSTGRES_PASSWORD);SSL Mode=Require;Trust Server Certificate=true'
+            value: 'Host=${orderingPostgresDb.properties.host};Port=5432;Database=orderingdb;Username=eshopadmin;Password=${postgresPassword};SSL Mode=Require;Trust Server Certificate=true'
           }
           ConnectionStrings__eventBus: {
             valueFrom: {
@@ -440,7 +440,7 @@ resource orderProcessor 'Radius.Compute/containers@2025-08-01-preview' = {
             value: postgresPassword
           }
           ConnectionStrings__orderingdb: {
-            value: 'Host=${orderingPostgresDb.properties.host};Port=5432;Database=orderingdb;Username=eshopadmin;Password=$(POSTGRES_PASSWORD);SSL Mode=Require;Trust Server Certificate=true'
+            value: 'Host=${orderingPostgresDb.properties.host};Port=5432;Database=orderingdb;Username=eshopadmin;Password=${postgresPassword};SSL Mode=Require;Trust Server Certificate=true'
           }
           ConnectionStrings__eventBus: {
             valueFrom: {
@@ -523,7 +523,7 @@ resource webhooksApi 'Radius.Compute/containers@2025-08-01-preview' = {
             value: postgresPassword
           }
           ConnectionStrings__webhooksdb: {
-            value: 'Host=${webhooksPostgresDb.properties.host};Port=5432;Database=webhooksdb;Username=eshopadmin;Password=$(POSTGRES_PASSWORD);SSL Mode=Require;Trust Server Certificate=true'
+            value: 'Host=${webhooksPostgresDb.properties.host};Port=5432;Database=webhooksdb;Username=eshopadmin;Password=${postgresPassword};SSL Mode=Require;Trust Server Certificate=true'
           }
           ConnectionStrings__eventBus: {
             valueFrom: {
