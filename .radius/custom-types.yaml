@@ -1,0 +1,62 @@
+namespace: Radius.Resources
+types:
+  azureServiceBusNamespaces:
+    description: |
+      The Radius.Resources/azureServiceBusNamespaces Resource Type deploys an Azure Service Bus
+      namespace with a single topic that publish/subscribe workloads share. The recipe returns the
+      namespace endpoint as a non-secret output and the namespace-level connection string through the
+      managed secret, so a container binds it with `secretKeyRef`.
+      ```bicep
+      resource eventBus 'Radius.Resources/azureServiceBusNamespaces@2025-08-01-preview' = {
+        name: 'event-bus'
+        properties: {
+          environment: environment
+          application: myApplication.id
+          topic: 'eshop_event_bus'
+        }
+      }
+      ```
+    apiVersions:
+      '2025-08-01-preview':
+        schema:
+          type: object
+          properties:
+            environment:
+              type: string
+              description: "(Required) The Radius Environment ID. Typically set by the rad CLI."
+            application:
+              type: string
+              description: "(Optional) The Radius Application ID."
+            codeReference:
+              type: string
+              description: "(Optional) Repo-relative source path for graph deep-linking; metadata only, ignored by the recipe."
+            topic:
+              type: string
+              description: "(Required) Name of the Service Bus topic created in the namespace and used by the application's publishers and subscribers."
+            sku:
+              type: string
+              enum: ['Standard', 'Premium']
+              default: 'Standard'
+              description: "(Optional) The Service Bus namespace SKU. Topics require Standard or Premium. Defaults to Standard."
+            endpoint:
+              type: string
+              readOnly: true
+              description: "(Read Only) The Service Bus namespace endpoint URI. Mapped from the recipe's serviceBusEndpoint output."
+            secrets:
+              type: object
+              description: >-
+                (Read-only) Recipe secrets. The reserved `name` sub-property references the managed
+                Radius.Security/secrets resource Radius materializes from the recipe's `outputs.secrets`;
+                the other sub-properties declare secret keys whose values are written only into that
+                managed secret. Consumers bind a key into a container env var via `secretKeyRef`,
+                using `<resource>.properties.secrets.name` as `secretName`.
+              properties:
+                name:
+                  type: string
+                  readOnly: true
+                  description: (Reserved) Name of the managed Radius.Security/secrets resource. Use as `secretName` in a container `secretKeyRef`.
+                connectionString:
+                  type: string
+                  readOnly: true
+                  description: "(Read Only) The namespace-level Service Bus connection string with Manage rights, used by clients that create their own subscriptions. Mapped from the recipe's primaryConnectionString output; delivered via the managed secret."
+          required: [environment, topic]
