@@ -1,7 +1,7 @@
 extension radius
 
 resource pack 'Radius.Core/recipePacks@2025-08-01-preview' = {
-  name: 'eshop-custom-types-v4'
+  name: 'eshop-custom-types-v5'
   properties: {
     recipes: {
       'Radius.Resources/azureServiceBusNamespaces': {
